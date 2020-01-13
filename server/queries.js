@@ -6,7 +6,7 @@ const pool = new Pool({
     user: process.env.DB_USER,
     host: 'localhost',
     database: process.env.DB_DATABASE,
-    password: process.env.DB_PASS, // change if not working
+    password: process.env.DB_PASS,  // NEEDS OWN KEYS TO RUN ELSEWHERE 
     port: 5432
 })
 
