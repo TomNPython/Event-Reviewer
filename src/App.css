@@ -1,5 +1,10 @@
 body {
-  color: rgb(2, 2, 78)
+  color: rgb(2, 2, 78);
+  background-color: rgb(239, 239, 250);
+  text-align: center;
+  background-image: url('./assets/writing-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .App {
@@ -43,4 +48,8 @@ body {
 
 .navbar {
   background-color: rgb(2, 2, 78);
+}
+
+h1 {
+  margin: 10px
 }

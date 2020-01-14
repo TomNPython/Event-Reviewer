@@ -6,13 +6,15 @@ export default function ReviewHome() {
 
     const [reviews, setReviews] = useState([]);
 
-    useEffect((reviews) => {
+    useEffect(() => { //may need reviews as dependency if it breaks? probably not
         axios.get('http://localhost:3000/reviews')
             .then(res => {
                 setReviews(res.data)
-                console.log(reviews)
             })
+            .catch(err => console.log(err))
     }, [])
+
+    console.log(reviews)
 
     return (
         <div>
