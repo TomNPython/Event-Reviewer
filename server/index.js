@@ -12,11 +12,15 @@ app.use(
   })
 );
 
-app.get('/', (request, response) => {
-    response.json({ info: 'Node.js, Express, and Postgres API' })
+app.get('/', (req, res) => {
+    res.json({ info: 'Node.js, Express, and Postgres API' })
   });
 
-app.get('/reviews', db.getReviews)
+//app.get('/reviews', db.getReviews)
+
+const reviewsRouter = require('./routes/reviews')
+
+app.use('/reviews', reviewsRouter)
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
