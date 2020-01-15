@@ -17,11 +17,18 @@ export default function ReviewHome() {
     console.log(reviews)
 
     return (
-        <div>
-            <h1>Event Reviewer</h1>
-            <div>{reviews.map(review => 
-                <div key={review.id}>{review.event}</div>
-            )}
+        <div className='container'>
+            <img src={require('../assets/writing-bg.jpg')}></img>
+            <div className='intro-text'>
+                <h1>Event Reviewer</h1>
+                <p>Read and Write reviews of recent sportings events. Stay up to date with the latest goings on from sport around
+                    the world. Read reviews and ratings from viewers to check if you've missed anything exciting!
+                </p>
+                <p>Recent Reviews:</p>
+                <div className='intro-reviews'>{reviews.map(review => 
+                    <div key={review.id} className='padded-review'>{review.event}</div>
+                )}
+                </div>
             </div>
         </div>
     )
