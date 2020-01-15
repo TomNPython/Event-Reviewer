@@ -19,6 +19,18 @@ const getReviews = (req, res) => {
     })
 }
 
+const getReviewById = (req, res) => {
+    const id = parseInt(req.params.id);
+
+    pool.query('SELECT * FROM reviews WHERE id = $1', [id], (err, results) => {
+        if (err) {
+            throw err
+        }
+        res.status(200).json(results.rows)
+    })
+}
+
 module.exports = {
-    getReviews
+    getReviews, 
+    getReviewById
 }

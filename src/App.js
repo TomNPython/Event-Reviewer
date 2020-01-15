@@ -7,6 +7,7 @@ import ReviewHome from './components/review-home';
 import Navbar from './components/navbar';
 import CreateReview from './components/create-review';
 import Contact from './components/contact';
+import ShowReview from './components/show-review';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path='/' exact component={ReviewHome} />
       <Route path='/create' component={CreateReview} />
       <Route path='/contact' component={Contact} />
+      <Route path='/reviews/:id' component={ShowReview} />
     </Router>
   );
 }

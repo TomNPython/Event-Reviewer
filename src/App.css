@@ -63,7 +63,7 @@ body {
 .container .intro-text {
   margin-top: 30px;
   position: absolute;
-  top: 5em;
+  top: 150px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -74,4 +74,8 @@ body {
 
 .container .padded-review {
   padding: 5px
+}
+
+.show-review {
+  padding: 20px
 }
