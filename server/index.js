@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const db = require('./queries');
+// const db = require('./queries');   Refactored into routes folder
 
 const app = express();
 const port = 3000;
@@ -20,8 +20,10 @@ app.get('/', (req, res) => {
 
 //app.get('/reviews', db.getReviews)
 
+const createRouter = require('./routes/create')
 const reviewsRouter = require('./routes/reviews')
 
+app.use('/', createRouter)
 app.use('/reviews', reviewsRouter)
 
 app.listen(port, () => {
