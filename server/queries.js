@@ -43,8 +43,20 @@ const createReview = (req, res) => {
     })
 }
 
+const deleteReview = (req, res) => {
+    const id = parseInt(req.params.id);
+
+    pool.query('DELETE FROM reviews WHERE id = $1', [id], (err, results) => {
+        if (err) {
+            throw err
+        }
+        res.status(200).send(`Review with id ${id} deleted.`)
+    })
+}
+
 module.exports = {
     getReviews, 
     getReviewById, 
-    createReview
+    createReview, 
+    deleteReview
 }

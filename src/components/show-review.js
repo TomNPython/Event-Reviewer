@@ -13,10 +13,15 @@ export default function ShowReview(props) {
             setReview(res.data)
         })
         .catch(err => console.log('Error: ' + err))
+        
     }, [])
 
-    console.log(review)
-    console.log(review[0])
+    const deleteReview = (id) => {
+        axios.delete('http://localhost:3000/reviews/' + id)
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err))
+    }
+
     return (
         <div className='show-review'>
             {review.map(rev => 
@@ -26,6 +31,7 @@ export default function ShowReview(props) {
                     <label>Review:</label>
                     <p>{rev.review}</p>
                     <p><em>By {rev.reviewer || 'anonymous'} on {rev.date.split('T')[0]}</em></p>
+                    <a href='/' onClick={() => deleteReview(rev.id)}>Delete Review</a>
                 </div>
             )}
         </div>

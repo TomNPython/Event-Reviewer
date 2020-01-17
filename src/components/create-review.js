@@ -32,7 +32,7 @@ export default function CreateReview() {
 
     return (
         <div>
-            <p>Create Review</p>
+            <h2>Create Review</h2>
             <form onSubmit={onSubmit}>
                 <div className='form-group'>
                     <label>Sport:</label>
@@ -54,11 +54,11 @@ export default function CreateReview() {
                 </div>
                 <div className='form-group'>
                     <label>Review:</label>
-                    <input type='text' 
+                    <textarea rows='6' 
                     name='review'
                     className='form-control'
                     onChange= {e =>{setReview(e.target.value)}}>   
-                    </input>
+                    </textarea>
 
                 </div>
                 <div className='form-group'>
