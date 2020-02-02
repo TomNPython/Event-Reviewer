@@ -54,9 +54,27 @@ const deleteReview = (req, res) => {
     })
 }
 
+const editReview = (req, res) => {
+    const id = parseInt(req.params.id);
+    const {sport, event, review, rating, date, reviewer} = req.body
+
+    pool.query(
+        'UPDATE reviews SET sport = $1, event = $2, review = $3, rating = $4, date = $5, reviewer = $6 WHERE id = $7',
+        [sport, event, review, rating, date, reviewer, id], 
+        (err, results) => {
+            if (err) {
+                throw err
+            }
+
+            response.status(200).send(`Review ${review} updated!`)
+        }
+    )
+}
+
 module.exports = {
     getReviews, 
     getReviewById, 
     createReview, 
-    deleteReview
+    deleteReview, 
+    editReview
 }
