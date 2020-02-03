@@ -8,6 +8,7 @@ import Navbar from './components/navbar';
 import CreateReview from './components/create-review';
 import Contact from './components/contact';
 import ShowReview from './components/show-review';
+import EditReview from './components/edit-review';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path='/create' component={CreateReview} />
       <Route path='/contact' component={Contact} />
       <Route path='/reviews/:id' component={ShowReview} />
+      <Route path='/edit/:id' component={EditReview} />
     </Router>
   );
 }

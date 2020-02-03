@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 const { useState, useEffect } = React; 
 
 export default function ShowReview(props) {
@@ -31,7 +32,8 @@ export default function ShowReview(props) {
                     <label>Review:</label>
                     <p>{rev.review}</p>
                     <p><em>By {rev.reviewer || 'anonymous'} on {rev.date.split('T')[0]}</em></p>
-                    <a href='/' onClick={() => deleteReview(rev.id)}>Delete Review</a>
+                    <a href='/' onClick={() => deleteReview(rev.id)}>Delete Review | </a>
+                    <Link to={'/edit/'+rev.id}>Edit Review</Link>
                 </div>
             )}
         </div>

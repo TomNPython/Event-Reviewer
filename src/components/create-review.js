@@ -6,14 +6,12 @@ import axios from 'axios';
 export default function CreateReview() {
 
     const [date, setDate] = useState(new Date());
-    const [sport, setSport] = useState('hi');
+    const [sport, setSport] = useState('');
     const [event, setEvent] = useState('');
     const [review, setReview] = useState('');
     const [rating, setRating] = useState(0);
     const [reviewer, setReviewer] = useState('');
 
-    console.log(sport)
-    console.log(date)
 
     const onSubmit = () => {
         const fullReview = {
@@ -27,7 +25,6 @@ export default function CreateReview() {
         axios.post('http://localhost:3000/create', fullReview)
             .then(res => console.log(res.data))
             .catch(err => console.log('Error: ' + err))
-
     }
 
     return (

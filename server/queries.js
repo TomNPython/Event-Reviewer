@@ -66,7 +66,7 @@ const editReview = (req, res) => {
                 throw err
             }
 
-            response.status(200).send(`Review ${review} updated!`)
+            res.status(200).send(`Review ${review} updated!`)
         }
     )
 }
