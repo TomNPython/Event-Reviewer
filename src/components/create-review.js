@@ -23,7 +23,10 @@ export default function CreateReview() {
             reviewer: reviewer
         }
         axios.post('http://localhost:3000/create', fullReview)
-            .then(res => console.log(res.data))
+            .then(res => {
+                console.log(res.data)
+                window.location='/'
+            })
             .catch(err => console.log('Error: ' + err))
     }
 

@@ -39,9 +39,11 @@ useEffect(() => {
             reviewer: reviewer
         }
         axios.put('http://localhost:3000/edit/'+ props.match.params.id, fullReview)
-            .then(res => console.log(res.data))
+            .then(res => {
+                console.log(res.data)
+                window.location='/'
+            })
             .catch(err => console.log('Error: ' + err))
-
     }
 
     return (
