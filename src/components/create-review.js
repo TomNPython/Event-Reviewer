@@ -36,11 +36,19 @@ export default function CreateReview() {
             <form onSubmit={onSubmit}>
                 <div className='form-group'>
                     <label>Sport:</label>
-                    <input type='text' 
+                    <select 
                     name='sport'
                     className='form-control'
-                    onChange= {e =>{setSport(e.target.value)}}>   
-                    </input>
+                    onChange= {e =>{setSport(e.target.value)}}>
+                        <option value="Football">Football</option>
+                        <option value="Rugby">Rugby</option>
+                        <option value="Cricket">Cricket</option>
+                        <option value="Boxing">Boxing</option>
+                        <option value="Baseball">Baseball</option>
+                        <option value="Basketball">Basketball</option>
+                        <option value="Darts">Darts</option>
+                        <option value="Other">Other</option>   
+                    </select>
 
                 </div>
                 <div className='form-group'>
@@ -75,7 +83,7 @@ export default function CreateReview() {
 
                 </div>
                 <div className='form-group'>
-                    <label>Reviewer:</label>
+                    <label>Reviewer (optional):</label>
                     <input type='text' 
                     name='reviewer'
                     className='form-control'

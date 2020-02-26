@@ -30,7 +30,7 @@ export default function ShowReview(props) {
                     <label>Event:</label>
                     <p>{rev.event}</p>
                     <label>Review:</label>
-                    <p>{rev.review}</p>
+                    <p className='review-box'>{rev.review}</p>
                     <p><em>By {rev.reviewer || 'anonymous'} on {rev.date.split('T')[0]}</em></p>
                     <a href='/' onClick={() => deleteReview(rev.id)}>Delete Review | </a>
                     <Link to={'/edit/'+rev.id}>Edit Review</Link>

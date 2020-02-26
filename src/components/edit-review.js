@@ -6,7 +6,6 @@ import axios from 'axios';
 
 export default function EditReview(props) {
 
-    const [fullReview, setFullReview] = useState([])
     const [date, setDate] = useState(new Date());
     const [sport, setSport] = useState('');
     const [event, setEvent] = useState('');
@@ -18,7 +17,6 @@ useEffect(() => {
     axios.get('http://localhost:3000/reviews/' + props.match.params.id)
         .then(res => {
             console.log(res.data)
-            setFullReview(res.data)
             setSport(res.data[0].sport)
             setEvent(res.data[0].event)
             setReview(res.data[0].review)
