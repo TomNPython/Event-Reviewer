@@ -25,7 +25,7 @@ useEffect(() => {
         })
         .catch(err => console.log('Error: ' + err))
         
-    }, [])
+    }, [props])
 
     const onSubmit = () => {
         const fullReview = {

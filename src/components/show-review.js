@@ -8,14 +8,14 @@ export default function ShowReview(props) {
     const [review, setReview] = useState([])
 
     useEffect(() => {
-    axios.get('http://localhost:3000/reviews/' + props.match.params.id)
-        .then(res => {
-            console.log(res.data)
-            setReview(res.data)
-        })
-        .catch(err => console.log('Error: ' + err))
-        
-    }, [])
+        axios.get('http://localhost:3000/reviews/' + props.match.params.id)
+            .then(res => {
+                console.log(res.data)
+                setReview(res.data)
+            })
+            .catch(err => console.log('Error: ' + err))
+            
+    }, [props])
 
     const deleteReview = (id) => {
         axios.delete('http://localhost:3000/reviews/' + id)
